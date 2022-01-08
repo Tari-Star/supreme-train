@@ -87,5 +87,34 @@ var myQue = [
       })
 
   };
-  function pickChoices();
+  function pickChoices(e) {
+      var element = e.target;
+
+      if (element.matches("li")){
+          var createDiv = document.createElement("div");
+          createDiv.setAttribute("id","createDiv");
+          // if correct
+          if (element.textContent == myQue[questionIndex].ans){
+          score++;
+          createDiv.textContent = "Correct! The answer is: " + myQue[questionIndex].ans;
+          //if wrong
+      } else {
+          // will deduct -5 seconds ogg secLeft for wrong answer
+          secLeft = secLeft - penalty;
+          createDiv.textContent = "Wrong! The correct answer is: " + myQue[questionIndex].ans;
+      }
+  }
+  // question index determines number question user is on
+  questionIndex++;
+
+  if (questionIndex >= myQue.length){
+      //endQuiz will append last page with user stats
+      endQuiz();
+      createDiv.textContent = "End of Quiz!" + " " + "You got " + score + "/" + myQue.length + " Correct!";
+  } else {
+      buildQuiz(questionIndex);
+  }
+  questions.appendChild(createDiv);
+  }
+  
   function endQuiz();
