@@ -100,7 +100,7 @@ var myQue = [
        
           //if wrong
       } else {
-          // will deduct -5 seconds ogg secLeft for wrong answer
+          // will deduct -10 seconds off seconds left for wrong answer
           secLeft = secLeft - penalty;
           createDiv.textContent = "Wrong! The correct answer is: " + myQue[questionIndex].ans;
          
@@ -112,7 +112,7 @@ var myQue = [
   if (questionIndex >= myQue.length){
       //endQuiz will append last page with user stats
       endQuiz();
-      createDiv.textContent = "End of Quiz!" + " " + "You got " + score + "/" + myQue.length + " Correct!";
+      createDiv.textContent = "End of Quiz! " + " " + " You got " + score + " out of " + myQue.length + " Correct!";
   } else {
       buildQuiz(questionIndex);
   }
