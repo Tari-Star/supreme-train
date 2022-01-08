@@ -60,7 +60,7 @@ var myQue = [
                   endQuiz();
                   currentTime.textContent = "Time's up!";
               }
-          }, 3000);
+          }, 1000);
       }
       buildQuiz(questionIndex);
   })
