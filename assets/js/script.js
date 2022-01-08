@@ -57,8 +57,35 @@ var myQue = [
               currentTime.textContent = "Time: " + secLeft;
               if(secLeft <= 0){
                   clearInterval(holdInterval);
-                  
+                  endQuiz();
+                  currentTime.textContent = "Time's up!";
               }
-          })
+          }, 1000);
       }
+      buildQuiz(questionIndex);
   })
+ 
+  // Render questions and choices to page
+  function buildQuiz(questionIndex) {
+      //clears existing data
+      questions.innerHTML ="";
+      createEl.innerHTML = "";
+      // for loops for all info in array
+      for(var i = 0; i < myQue.length; i++) {
+          // appends question title only
+          var userQue = myQue[questionIndex].que;
+          var userOpt = myQue[questionIndex].opt;
+          questions.textContent = userQue;
+      }
+      // new for esch for question choices
+      userOpt.forEach(function (newItem) {
+          var listItem = document.createElement("li");
+          listItem.textContent = newItem;
+          questions.appendChild(createEl);
+          createEl.appendChild(listItem);
+          listItem.addEventListener("click", (pickChoices));
+      })
+
+  };
+  function pickChoices();
+  function endQuiz();
