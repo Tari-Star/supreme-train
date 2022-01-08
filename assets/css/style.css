@@ -25,6 +25,16 @@ body {
 .timer {
     float: right;
 }
+.clear {
+    background-color: darkcyan;
+    position: relative;
+    padding: 10px;
+    font-size: 20px;
+    color: whitesmoke;
+    top: 30%;
+    right: 5%;
+    text-align: center;
+}
 .return {
     background-color: darkcyan;
     position: relative;
@@ -36,16 +46,6 @@ body {
     width: auto;
     text-align: center;
     text-decoration: none;
-}
-.clear {
-    background-color: darkcyan;
-    position: relative;
-    padding: 10px;
-    font-size: 20px;
-    color: whitesmoke;
-    top: 30%;
-    right: 5%;
-    text-align: center;
 }
 button {
     border-radius: 8px;

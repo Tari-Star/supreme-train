@@ -97,11 +97,13 @@ var myQue = [
           if (element.textContent == myQue[questionIndex].ans){
           score++;
           createDiv.textContent = "Correct! The answer is: " + myQue[questionIndex].ans;
+       
           //if wrong
       } else {
           // will deduct -5 seconds ogg secLeft for wrong answer
           secLeft = secLeft - penalty;
           createDiv.textContent = "Wrong! The correct answer is: " + myQue[questionIndex].ans;
+         
       }
   }
   // question index determines number question user is on
@@ -139,7 +141,7 @@ var myQue = [
           var timeScore = secLeft;
           var createP2 = document.createElement("p");
           clearInterval(holdInterval);
-          createP2.textContent = "Your final score is: " + timeScore;
+          createP.textContent = "Your final score is: " + timeScore;
 
           questions.appendChild(createP2);
       }
@@ -170,8 +172,8 @@ var myQue = [
       // event listener  and local storage
       createSubmit.addEventListener("click", function (){
           var initials = createInput.value;
-          if(initials === null) {
-              console.log("No value intered!");
+          if(!initials) {
+              alert("Please enter your initials!");
           } else {
               var finalScore = {
                   initials: initials,
