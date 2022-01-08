@@ -38,7 +38,7 @@ var myQue = [
 
   var currentTime = document.querySelector(".timer");
   var timer = document.querySelector("#start-btn");
-  var questions = document.querySelector(".question-header");
+  var questions = document.querySelector(".header");
   var infoBox = document.querySelector(".info-box");
 
   // Seconds left is 15 second per question
@@ -60,7 +60,7 @@ var myQue = [
                   endQuiz();
                   currentTime.textContent = "Time's up!";
               }
-          }, 1000);
+          }, 3000);
       }
       buildQuiz(questionIndex);
   })

@@ -19,13 +19,13 @@ body {
     font-size: 20px;
     color:whitesmoke;
 }
-.question-header {
+.header {
     margin: 20px;
 }
 .timer {
     float: right;
 }
-#goBack {
+.return {
     background-color: darkcyan;
     position: relative;
     padding: 10px;
@@ -37,7 +37,7 @@ body {
     text-align: center;
     text-decoration: none;
 }
-#clear {
+.clear {
     background-color: darkcyan;
     position: relative;
     padding: 10px;
@@ -73,14 +73,16 @@ h1 {
     text-align: center;
 }
 li {
-    background-color: darkcyan;
+    background-color: #18c9c9;
     margin-top: 10px;
     padding: 5px 15px;
     width: 80%;
     font-size: 18px;
     color: whitesmoke;
+    text-align: center;
 }
 #createDiv {
     margin-top: 20px;
     border-top: 1px solid lightgray;
+    text-align: center;
 }
