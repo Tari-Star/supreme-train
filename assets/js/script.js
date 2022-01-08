@@ -115,6 +115,81 @@ var myQue = [
       buildQuiz(questionIndex);
   }
   questions.appendChild(createDiv);
-  }
-  
-  function endQuiz();
+  };
+
+  function endQuiz(){
+      questions.innerHTML = "";
+      currentTime.innerHTML  = "";
+
+      // Heading
+      var createH1 = document.createElement("h1");
+      createH1.setAttribute("id", "createH1");
+      createH1.textContent = "All Done!";
+
+      questions.appendChild(createH1);
+
+      // paragraph
+      var createP = document.createElement("p");
+      createP.setAttribute("id", "createP");
+
+      questions.appendChild(createP);
+
+      // calculate remaining time and replace with score
+      if(secLeft >= 0) {
+          var timeScore = secLeft;
+          var createP2 = document.createElement("p");
+          clearInterval(holdInterval);
+          createP2.textContent = "Your final score is: " + timeScore;
+
+          questions.appendChild(createP2);
+      }
+
+      // create label
+      var createLabel = document.createElement("label");
+      createLabel.setAttribute("id", "createLabel");
+      createLabel.textContent = "Enter your initials: ";
+
+      questions.appendChild(createLabel);
+
+      // create input
+      var createInput = document.createElement("input");
+      createInput.setAttribute("type", "text");
+      createInput.setAttribute("id", "createInput");
+      createInput.textContent = "";
+
+      questions.appendChild(createInput);
+
+      // create submit
+      var createSubmit = document.createElement("button");
+      createSubmit.setAttribute("type", "submit");
+      createSubmit.setAttribute("id", "submit");
+      createSubmit.textContent = "Submit";
+
+      questions.appendChild(createSubmit);
+
+      // event listener  and local storage
+      createSubmit.addEventListener("click", function (){
+          var initials = createInput.value;
+          if(initials === null) {
+              console.log("No value intered!");
+          } else {
+              var finalScore = {
+                  initials: initials,
+                  score: timeScore
+              }
+              console.log(finalScore);
+              var allScores = localStorage.getItem("allScores");
+              if(allScores === null){
+                  allScores = [];
+              } else {
+                  allScores = JSON.parse(allScores);
+              }
+              allScores.push(finalScore);
+              var newScore = JSON.stringify(allScores);
+              localStorage.setItem("allScores", newScore);
+              // going to final page
+              window.location.replace("./highscores.html");
+          }
+      });
+
+  };
