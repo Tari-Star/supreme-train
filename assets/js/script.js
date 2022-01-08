@@ -141,7 +141,7 @@ var myQue = [
           var timeScore = secLeft;
           var createP2 = document.createElement("p");
           clearInterval(holdInterval);
-          createP.textContent = "Your final score is: " + timeScore;
+          createP2.textContent = "Your final score is: " + timeScore;
 
           questions.appendChild(createP2);
       }
