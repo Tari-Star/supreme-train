@@ -25,11 +25,9 @@ This application is timed coding quiz with multiple-choice questions.
 * Repository link: [https://github.com/Tari-Star/supreme-train.git](https://github.com/Tari-Star/supreme-train.git)
 
 ## Technology:
->JavaScript
-
->CSS
-
->HTML
+* ***JavaScript***
+* ***CSS***
+* ***HTML***
 
 ## Usage:
 * When users click the start button, a timer starts and they presented with questions.
