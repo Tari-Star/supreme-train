@@ -1,13 +1,14 @@
 body {
   width: 100%;
   margin: auto;
-  font-family: serif;
   font-family: "Varela Round", sans-serif;
   font-size: 20px;
   text-align: center;
   background-color: mediumturquoise;
 }
-
+div {
+  display: block;
+}
 .info-box {
   position: absolute;
   left: 30%;
